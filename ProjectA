@@ -1,0 +1,39 @@
+formTest 화면:)
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>로그인 폼</title>
+</head>
+<body>
+<form name = "fo" action = "formTestAction.jsp" method = "get">
+사용자 ID : <input type = "text" size = "15" name = "id"><br>
+비밀번호 : <input type = "password" size = "15" name = "password">
+<input type = "submit" value = "전달">
+</form>
+
+</body>
+</html>
+
+
+formTestAction 화면:)
+
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+<%
+String id = request.getParameter("id");
+String password = request.getParameter("password");
+
+%>
+아이디 :<%=id %>
+비밀번호 : <%=password %>
+</body>
+</html>
