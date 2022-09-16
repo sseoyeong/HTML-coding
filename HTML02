@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>텍스트 입력 폼</title>
+</head>
+<body>
+<h3>자기 소개서 작성</h3>
+<hr>
+<form name = "inform" action = "formTest02Action.jsp" method = "post">
+이름 : <input type = "text" name = "name"><br>
+암호 : <input type = "password" maxlength = "4" name = "password"><br>
+자소서 : <textarea rows = "5" cols = "20" name = "content"></textarea><br>
+<input type = "submit" value = "전달">
+</form>
+</body>
+</html>
+
+
+받기 화면:)
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>자소서 전달 받고 출력</title>
+</head>
+<body>
+<%
+	request.setCharacterEncoding("UTF-8");
+	String name = request.getParameter("name");
+	String password = request.getParameter("password");
+	String content = request.getParameter("content");
+%>
+이름 : <%= name %><br>
+비밀번호 : <%= password %><br>
+자소서 내용 : <%= content %><br>
+</body>
+</html>
